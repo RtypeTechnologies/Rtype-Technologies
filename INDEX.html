@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rtype Technologies</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Estilos para el menú de servicios */
+        #servicios {
+            display: none; /* Inicia oculto */
+            margin-top: 20px;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Estilo para la sección de servicios */
+        #servicios h2 {
+            color: #3498db;
+        }
+
+        /* Estilos para el botón */
+        button {
+            padding: 12px 25px;
+            background-color: #3498db; /* Azul brillante */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-size: 1.1em;
+        }
+
+        button:hover {
+            background-color: #2980b9; /* Azul oscuro al pasar el mouse */
+        }
+
+        /* Estilos para el menú desplegable */
+        .menu {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .menu li {
+            padding: 10px;
+            cursor: pointer;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .menu li:hover {
+            background-color: #ecf0f1; /* Fondo suave al pasar el cursor */
+        }
+
+        /* Estilo para el submenú */
+        .submenu {
+            display: none;
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+
+        .submenu li {
+            padding: 5px 0;
+        }
+
+        /* Estilos para la ventana emergente */
+        .modal {
+            display: none; /* Inicia oculta */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.4); /* Fondo semitransparente */
+            overflow: auto;
+            padding-top: 60px;
+        }
+
+        /* Modal Content */
+        .modal-content {
+            background-color: #fff;
+            margin: 5% auto;
+            padding: 20px;
+            border-radius: 10px;
+            width: 80%;
+            max-width: 500px;
+        }
+
+        /* Estilos para el formulario */
+        .modal-content form input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .modal-content form button {
+            width: 100%;
+            padding: 12px;
+            background-color: #3498db;
+            border: none;
+            border-radius: 5px;
+            color: white;
+            cursor: pointer;
+        }
+
+        .modal-content form button:hover {
+            background-color: #2980b9;
+        }
+
+        /* Estilo de cerrar el modal */
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Estilo de la leyenda */
+        .notice {
+            font-size: 0.9em;
+            color: #555;
+            margin-top: 10px;
+        }
+
+        /* Estilo para el contador de visitas */
+        #visit-counter {
+            font-size: 0.8em;
+            color: #aaa;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bienvenido a Rtype Technologies</h1>
+    </header>
+
+    <!-- Sección ¿Quiénes somos? -->
+    <section id="about">
+        <h2>¿Quiénes somos?</h2>
+        <p>En Rtype Technologies, nos especializamos en ofrecer soluciones tecnológicas avanzadas en el ámbito de la vigilancia doméstica y para pequeñas y medianas empresas (PYMES). Nuestro equipo está comprometido con el desarrollo de productos de alta calidad, diseñados para satisfacer las necesidades específicas de nuestros clientes, garantizando seguridad, confianza y eficiencia.</p>
+    </section>
+
+    <section id="contenido">
+        <p>Explora nuestros servicios y soluciones.</p>
+        <button id="btn-servicios">Descubre más</button>
+    </section>
+
+    <section id="servicios">
+        <h2>Servicios de Rtype Technologies</h2>
+        <p>En Rtype Technologies, nos especializamos en ofrecer soluciones avanzadas en seguridad tecnológica. A continuación, te presentamos algunas de nuestras opciones de servicios:</p>
+
+        <ul class="menu">
+            <!-- Cámaras de Seguridad -->
+            <li id="camara-seguridad">Cámaras de Seguridad</li>
+            <ul class="submenu" id="submenu-camaras">
+                <li><strong>CCTV:</strong> Cámaras de circuito cerrado de televisión para monitoreo en tiempo real.</li>
+                <li><strong>Cámaras IP:</strong> Cámaras de seguridad basadas en red, fáciles de acceder de forma remota.</li>
+            </ul>
+
+            <!-- Cerraduras Inteligentes -->
+            <li id="cerraduras-inteligentes">Cerraduras Inteligentes</li>
+            <ul class="submenu" id="submenu-cerraduras">
+                <li><strong>Cerraduras Electrónicas:</strong> Soluciones de acceso remoto y control para tu hogar o negocio.</li>
+                <li><strong>Cerraduras Biométricas:</strong> Control de acceso mediante huellas dactilares o reconocimiento facial.</li>
+            </ul>
+
+            <!-- Puntos de Venta -->
+            <li id="puntos-venta">Puntos de Venta (POS)</li>
+            <ul class="submenu" id="submenu-puntos-venta">
+                <li><strong>Sistemas POS:</strong> Soluciones completas para gestionar ventas y stock de tu negocio.</li>
+                <li><strong>Software de Gestión:</strong> Herramientas para un control eficiente y rápido de tus ventas.</li>
+            </ul>
+
+            <!-- Venta y Mantenimiento de PC -->
+            <li id="mantenimiento-pc">Venta y Mantenimiento de PC</li>
+            <ul class="submenu" id="submenu-pc">
+                <li><strong>Venta de Equipos:</strong> PC y laptops de última tecnología a precios accesibles.</li>
+                <li><strong>Mantenimiento:</strong> Reparación y optimización de sistemas operativos y hardware.</li>
+            </ul>
+
+            <!-- Instalación de Redes Wi-Fi -->
+            <li id="redes-wifi">Instalación de Redes Wi-Fi</li>
+            <ul class="submenu" id="submenu-redes-wifi">
+                <li><strong>Redes Domésticas:</strong> Instalación y configuración de redes Wi-Fi para el hogar.</li>
+                <li><strong>Redes Empresariales:</strong> Soluciones de conectividad de alto rendimiento para PYMES.</li>
+            </ul>
+
+            <!-- Botón Contáctanos -->
+            <li><button id="btn-contacto">Contáctanos</button></li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Rtype Technologies</p>
+    </footer>
+
+    <!-- Ventana emergente para contacto -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Contáctanos</h2>
+            <form id="contactForm">
+                <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+                <input type="tel" id="telefono" name="telefono" placeholder="Teléfono" required>
+                <input type="email" id="email" name="email" placeholder="Correo Electrónico (opcional)">
+                <button type="submit">Enviar</button>
+            </form>
+            <!-- Leyenda de redirección -->
+            <p class="notice">Al enviar, serás redirigido a WhatsApp para completar la solicitud de cotización.</p>
+        </div>
+    </div>
+
+    <!-- Contador de visitas -->
+    <div id="visit-counter">
+        <p>Visitas: <span id="counter">0</span></p>
+    </div>
+
+    <script>
+        // Función para mostrar u ocultar el menú de servicios
+        document.getElementById('btn-servicios').addEventListener('click', function() {
+            var servicios = document.getElementById('servicios');
+            if (servicios.style.display === 'none' || servicios.style.display === '') {
+                servicios.style.display = 'block'; // Mostrar
+            } else {
+                servicios.style.display = 'none'; // Ocultar
+            }
+        });
+
+        // Función para mostrar el submenú de Cámaras de Seguridad
+        document.getElementById('camara-seguridad').addEventListener('click', function() {
+            var submenu = document.getElementById('submenu-camaras');
+            submenu.style.display = (submenu.style.display === 'none' || submenu.style.display === '') ? 'block' : 'none';
+        });
+
+        // Función para mostrar el submenú de Cerraduras Inteligentes
+        document.getElementById('cerraduras-inteligentes').addEventListener('click', function() {
+            var submenu = document.getElementById('submenu-cerraduras');
+            submenu.style.display = (submenu.style.display === 'none' || submenu.style.display === '') ? 'block' : 'none';
+        });
+
+        // Función para mostrar el submenú de Puntos de Venta
+        document.getElementById('puntos-venta').addEventListener('click', function() {
+            var submenu = document.getElementById('submenu-puntos-venta');
+            submenu.style.display = (submenu.style.display === 'none' || submenu.style.display === '') ? 'block' : 'none';
+        });
+
+        // Función para mostrar el submenú de Venta y Mantenimiento de PC
+        document.getElementById('mantenimiento-pc').addEventListener('click', function() {
+            var submenu = document.getElementById('submenu-pc');
+            submenu.style.display = (submenu.style.display === 'none' || submenu.style.display === '') ? 'block' : 'none';
+        });
+
+        // Función para mostrar el submenú de Redes Wi-Fi
+        document.getElementById('redes-wifi').addEventListener('click', function() {
+            var submenu = document.getElementById('submenu-redes-wifi');
+            submenu.style.display = (submenu.style.display === 'none' || submenu.style.display === '') ? 'block' : 'none';
+        });
+
+        // Modal de contacto
+        var modal = document.getElementById('contactModal');
+        var btn = document.getElementById('btn-contacto');
+        var span = document.getElementsByClassName('close')[0];
+
+        btn.onclick = function() {
+            modal.style.display = "block";
+        }
+
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function(event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        // Enviar formulario y redirigir a WhatsApp
+        document.getElementById('contactForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var nombre = document.getElementById('nombre').value;
+            var telefono = document.getElementById('telefono').value;
+            var email = document.getElementById('email').value;
+
+            // Crear el mensaje para WhatsApp
+            var mensaje = "Solicitud de cotización, contacta a " + nombre + " teléfono: " + telefono + " correo: " + email + " lo más pronto posible!";
+
+            // Redirigir a WhatsApp
+            var url = "https://wa.me/523222629379?text=" + encodeURIComponent(mensaje);
+            window.location.href = url;
+
+            modal.style.display = 'none'; // Cerrar el modal después de enviar
+        });
+
+        // Contador de visitas usando localStorage
+        var visitCount = localStorage.getItem('visitCount');
+        if (!visitCount) {
+            visitCount = 1;
+        } else {
+            visitCount = parseInt(visitCount) + 1;
+        }
+
+        localStorage.setItem('visitCount', visitCount);
+        document.getElementById('counter').textContent = visitCount;
+    </script>
+</body>
+</html>

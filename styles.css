@@ -1,0 +1,122 @@
+/* Reset de márgenes y paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4f8; /* Color suave para el fondo */
+    color: #333;
+    line-height: 1.6;
+    padding: 0 20px;
+}
+
+header {
+    background-color: #2D3E50; /* Azul oscuro para el encabezado */
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+h1 {
+    font-size: 2.5em;
+    font-weight: 700;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#contenido {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 12px 25px;
+    background-color: #3498db; /* Azul brillante */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1.1em;
+    animation: buttonAnim 1s ease-out;
+}
+
+button:hover {
+    background-color: #2980b9; /* Azul oscuro al pasar el mouse */
+}
+
+@keyframes buttonAnim {
+    0% {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #2D3E50;
+    color: white;
+    margin-top: 40px;
+    border-radius: 10px;
+}
+
+/* Sección "Quiénes somos" */
+#about {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    margin-top: 40px;
+}
+
+#about h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    color: #3498db;
+}
+
+#about p {
+    font-size: 1.1em;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Estilo responsivo */
+@media (max-width: 768px) {
+    header {
+        padding: 20px;
+    }
+
+    #contenido {
+        padding: 20px;
+    }
+
+    button {
+        padding: 10px 20px;
+    }
+}
